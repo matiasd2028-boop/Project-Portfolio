@@ -1,0 +1,53 @@
+﻿Project Portfolio - Matias Di Domenico
+
+Project: RC Car 
+Result: I built a functional 3D-printed RC car with my friend.
+Skills used: CAD, radio frequency optimisation, basic soldering and circuit making.
+Major challenges: Designing CAD independently for the first time and maximising the controller's limited RF range as well as my first time soldering.
+
+
+Project: High-Altitude Weather Balloon (IB Personal Project) 
+Result: I independently assembled a weather balloon payload and successfully launched and predicted the trajectory.
+Skills used: Independent research, project planning and high-altitude logistics.
+Major challenges: Independent project execution and troubleshooting a payload camera malfunction caused by pre-launch impact shock, which led to no footage capture during flight.
+Report: Weather Balloon Grade 10 MYP PP report (written before the launch day) (https://docs.google.com/document/d/1E-pHnjvshnX2U9S1n7bHIt4PVeMTgcQoYrmHkb7EijA/edit?usp=sharing)
+Report Grade: (Attach the Personal project grade report in which I got 6 6 6)
+
+
+Project: Axiom Chess Engine 
+Result: Developed a Python-based chess engine capable of defeating friends and family. Successfully integrated it with the Lichess API to test against other bots and improve the bot's algorithmic logic.
+Skills used: Python, UI design, algorithm optimisation, API integration.
+Major challenges: extensive live testing to identify and patch the bot's strategic flaws. 
+GitHub repo: AxiomEngine Repo (https://github.com/matiasd2028-boop/ChessBot.py)
+
+
+Project: Openclaw AI assistant
+Result: A fully functional, free and power-efficient personal AI assistant.
+Skills used: SBC usage (Raspberry Pi 4B), AI agent deployment (OpenClaw) and API integration across various necessary platforms.
+Major challenges: Ensuring all external platforms synced properly into a low-power, free personal AI agent.
+
+
+Project: Custom NAS 
+Result: Fully functional immich local NAS server for having all my photos
+Skills used: hardware reutilization, configuring a Raspberry Pi and data networking.
+Major challenges: Integrating a recycled laptop HDD with a SBC to create a reliable storage network.
+
+
+Project: Automated Sun-Tracking Solar Panel 
+Result: I successfully connected solar sensors to an Arduino, which in turn moved a servo to point the solar panel towards the most available sunlight. This charged the device’s battery, making it self-sustaining, plus any surplus may have been used for other things, as the battery had dual-output USB ports. 
+Skills used: basic coding, microcontroller usage and hardware optimisation.
+Major challenges: Configuring all the hardware within the limit reach of my cables as well as cable management to not make the project look too ugly.
+
+
+Project: Credit card fraud detector
+Result: Successfully built a credit card fraud detector ML algorithm based off of the Kaggle dataset, meeting all targets I had set for it. 
+Skills used: coding, ML, data understanding.
+Major challenges: 
+GitHub repo link: Link (https://github.com/matiasd2028-boop/Credit-Card-Fraud-Detector/tree/main)
+
+
+Project: World Cup predictor
+Result: I made a successful Python-based prediction engine to predict the World Cup and was able to get out the following images with it.
+Skills used: Python, coding, ML.
+Major challenges: Getting good data, especially with the quickly moving events of the World Cup unfolding WHILE I was coding this.
+GitHub repo link: Link (https://github.com/matiasd2028-boop/World-Cup-Predictor)
