@@ -3,6 +3,8 @@ const projectsData = {
   "rc-car": {
     title: "3D-Printed RC Car",
     status: "completed",
+    category: "Hardware & Robotics",
+    categoryKey: "hardware",
     result: "I built a functional 3D-printed RC car with my friend.",
     skills: ["CAD", "Radio Frequency Optimisation", "Basic Soldering", "Circuit Making"],
     challenges: "Designing CAD independently for the first time and maximising the controller's limited RF range as well as my first time soldering.",
@@ -13,6 +15,8 @@ const projectsData = {
   "weather-balloon": {
     title: "High-Altitude Weather Balloon (IB Personal Project)",
     status: "completed",
+    category: "Hardware & Robotics",
+    categoryKey: "hardware",
     result: "I independently assembled a weather balloon payload and successfully launched and predicted the trajectory.",
     skills: ["Independent Research", "Project Planning", "High-Altitude Logistics", "Data Trajectory Prediction"],
     challenges: "Independent project execution and troubleshooting a payload camera malfunction caused by pre-launch impact shock, which led to no footage capture during flight.",
@@ -25,7 +29,9 @@ const projectsData = {
   },
   "axiom-chess": {
     title: "Axiom Chess Engine",
-    status: "wip", // Marked as In Progress to reflect active algorithmic live testing
+    status: "wip",
+    category: "Software & Systems",
+    categoryKey: "software",
     result: "Developed a Python-based chess engine capable of defeating friends and family. Integrated it with the Lichess API to test against bots.",
     skills: ["Python", "UI Design", "Algorithm Optimisation", "API Integration", "Lichess API"],
     challenges: "Extensive live testing to identify and patch the bot's strategic flaws under real-time constraints.",
@@ -37,7 +43,9 @@ const projectsData = {
   },
   "openclaw-ai": {
     title: "Openclaw AI Assistant",
-    status: "wip", // Marked as In Progress to highlight ongoing platform additions
+    status: "wip",
+    category: "Software & Systems",
+    categoryKey: "software",
     result: "A fully functional, free and power-efficient personal AI assistant hosted on an SBC.",
     skills: ["SBC Usage (Raspberry Pi 4B)", "AI Agent Deployment", "API Integration", "System Administration"],
     challenges: "Ensuring all external platforms synced properly into a low-power, free personal AI agent with reliable uptime.",
@@ -48,6 +56,8 @@ const projectsData = {
   "custom-nas": {
     title: "Custom NAS Server",
     status: "completed",
+    category: "Software & Systems",
+    categoryKey: "software",
     result: "Fully functional local server hosting an Immich instance for photo backup.",
     skills: ["Hardware Reutilization", "Configuring Raspberry Pi", "Data Networking", "Linux Server Admin"],
     challenges: "Integrating a recycled laptop HDD with an SBC to create a reliable and secure storage network.",
@@ -58,6 +68,8 @@ const projectsData = {
   "solar-tracker": {
     title: "Automated Sun-Tracking Solar Panel",
     status: "completed",
+    category: "Hardware & Robotics",
+    categoryKey: "hardware",
     result: "Connected solar sensors to an Arduino, driving a servo to align the solar panel and charge a self-sustaining dual-USB battery.",
     skills: ["Basic Coding", "Microcontroller (Arduino)", "Hardware Optimisation", "Renewable Integration"],
     challenges: "Configuring hardware within the reach limits of available cables and layout cable management for clean aesthetics.",
@@ -68,10 +80,12 @@ const projectsData = {
   "fraud-detector": {
     title: "Credit Card Fraud Detector",
     status: "completed",
+    category: "Data Science & ML",
+    categoryKey: "data-science",
     result: "Built a credit card fraud detector ML algorithm using a Kaggle dataset, achieving all performance targets.",
     skills: ["Machine Learning", "Python Programming", "Data Understanding & Wrangling", "Scikit-Learn"],
     challenges: "Handling class imbalance inside data and optimizing features to prevent high false-positive fraud flags.",
-    image: "", // Fallback abstract graphic container
+    image: "",
     fallbackGradient: "linear-gradient(135deg, #292524 0%, #0C0A09 100%)",
     links: [
       { text: "View GitHub Repository", url: "https://github.com/matiasd2028-boop/Credit-Card-Fraud-Detector/tree/main", type: "github" }
@@ -80,10 +94,12 @@ const projectsData = {
   "world-cup": {
     title: "World Cup Predictor",
     status: "completed",
+    category: "Data Science & ML",
+    categoryKey: "data-science",
     result: "Created a Python-based prediction engine for the World Cup, outputting tournament probabilities and visual charts.",
     skills: ["Python", "Data Wrangling", "Machine Learning", "Data Visualisation"],
     challenges: "Sourcing high-quality data while events unfolded live, and training models to adapt dynamically as the tournament progressed.",
-    image: "", // Fallback abstract graphic container
+    image: "",
     fallbackGradient: "linear-gradient(135deg, #1C1917 0%, #0C0A09 100%)",
     links: [
       { text: "View GitHub Repository", url: "https://github.com/matiasd2028-boop/World-Cup-Predictor", type: "github" }
@@ -96,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupModal();
 });
 
-// Setup Project Grid Filtering
+// Setup Project Grid Filtering (by Category now)
 function setupTabFilters() {
   const tabs = document.querySelectorAll(".filter-tab");
   const cards = document.querySelectorAll(".project-card");
@@ -114,9 +130,9 @@ function setupTabFilters() {
       const filterValue = tab.getAttribute("data-filter");
 
       cards.forEach(card => {
-        const cardStatus = card.getAttribute("data-status");
+        const cardCategory = card.getAttribute("data-category");
 
-        if (filterValue === "all" || cardStatus === filterValue) {
+        if (filterValue === "all" || cardCategory === filterValue) {
           card.classList.remove("filtered-out");
         } else {
           card.classList.add("filtered-out");
@@ -136,7 +152,7 @@ function setupModal() {
 
   const modalImg = document.getElementById("modal-img");
   const modalTitle = document.getElementById("modal-title");
-  const modalStatus = document.getElementById("modal-status");
+  const modalBadgesContainer = document.getElementById("modal-badges-container");
   const modalResult = document.getElementById("modal-result");
   const modalSkills = document.getElementById("modal-skills");
   const modalChallenges = document.getElementById("modal-challenges");
@@ -149,15 +165,28 @@ function setupModal() {
 
       if (!data) return;
 
-      // Populate Title & Status Badge
+      // Populate Title
       modalTitle.innerText = data.title;
+      
+      // Populate Status and Category Badges
+      modalBadgesContainer.innerHTML = "";
+      
+      // 1. Status Badge
+      const statusBadge = document.createElement("span");
       if (data.status === "completed") {
-        modalStatus.innerText = "Completed";
-        modalStatus.className = "px-2.5 py-0.5 text-xs font-semibold rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 badge-completed";
+        statusBadge.innerText = "Completed";
+        statusBadge.className = "px-2.5 py-0.5 text-xs font-semibold rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 badge-completed";
       } else {
-        modalStatus.innerText = "Work In Progress";
-        modalStatus.className = "px-2.5 py-0.5 text-xs font-semibold rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 badge-wip";
+        statusBadge.innerText = "Work In Progress";
+        statusBadge.className = "px-2.5 py-0.5 text-xs font-semibold rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 badge-wip";
       }
+      modalBadgesContainer.appendChild(statusBadge);
+
+      // 2. Category Badge
+      const categoryBadge = document.createElement("span");
+      categoryBadge.innerText = data.category;
+      categoryBadge.className = "px-2.5 py-0.5 text-xs font-semibold rounded-full bg-amber-500/5 text-amber-400/90 border border-amber-500/10";
+      modalBadgesContainer.appendChild(categoryBadge);
 
       // Populate Image or Fallback Gradient
       if (data.image) {
@@ -181,7 +210,7 @@ function setupModal() {
             </svg>
           </div>
           <span class="text-white text-lg font-bold">${data.title}</span>
-          <span class="text-xs text-amber-400 mt-1 uppercase tracking-widest font-semibold">Visual Abstract Placeholder</span>
+          <span class="text-xs text-amber-400 mt-1 uppercase tracking-widest font-semibold">${data.category}</span>
         `;
         
         // Clear previous visual block inside container and append the new one

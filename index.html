@@ -110,11 +110,14 @@
           <button data-filter="all" class="filter-tab px-4 py-2.5 text-sm font-bold rounded-xl transition-all duration-300 text-amber-500 border border-transparent bg-amber-950/20">
             All Builds
           </button>
-          <button data-filter="completed" class="filter-tab px-4 py-2.5 text-sm font-bold rounded-xl transition-all duration-300 text-gray-400 border border-transparent hover:text-white">
-            Completed
+          <button data-filter="hardware" class="filter-tab px-4 py-2.5 text-sm font-bold rounded-xl transition-all duration-300 text-gray-400 border border-transparent hover:text-white">
+            Hardware &amp; Robotics
           </button>
-          <button data-filter="wip" class="filter-tab px-4 py-2.5 text-sm font-bold rounded-xl transition-all duration-300 text-gray-400 border border-transparent hover:text-white">
-            In Progress
+          <button data-filter="software" class="filter-tab px-4 py-2.5 text-sm font-bold rounded-xl transition-all duration-300 text-gray-400 border border-transparent hover:text-white">
+            Software &amp; Systems
+          </button>
+          <button data-filter="data-science" class="filter-tab px-4 py-2.5 text-sm font-bold rounded-xl transition-all duration-300 text-gray-400 border border-transparent hover:text-white">
+            Data Science &amp; ML
           </button>
         </div>
       </div>
@@ -123,7 +126,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 transition-all duration-500">
         
         <!-- 1. RC Car -->
-        <article data-project-id="rc-car" data-status="completed" class="project-card flex flex-col rounded-2xl glassmorphism glow-border-gold overflow-hidden cursor-pointer group">
+        <article data-project-id="rc-car" data-category="hardware" class="project-card flex flex-col rounded-2xl glassmorphism glow-border-gold overflow-hidden cursor-pointer group">
           <div class="h-48 md:h-52 w-full overflow-hidden relative border-b border-white/5 bg-slate-950">
             <img src="./assets/images/rc_car.png" alt="3D-Printed RC Car" class="w-full h-full object-cover card-image-zoom">
             <span class="absolute top-4 right-4 px-2.5 py-1 text-[11px] font-bold rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-widest badge-completed">
@@ -132,6 +135,7 @@
           </div>
           <div class="p-6 md:p-8 flex-1 flex flex-col justify-between">
             <div>
+              <span class="text-[10px] text-amber-500/80 font-extrabold uppercase tracking-widest block mb-1">Hardware &amp; Robotics</span>
               <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors duration-300 mb-2">3D-Printed RC Car</h3>
               <p class="text-sm text-gray-400 line-clamp-3 leading-relaxed">I built a functional 3D-printed RC car with my friend.</p>
             </div>
@@ -142,7 +146,7 @@
         </article>
 
         <!-- 2. High-Altitude Weather Balloon -->
-        <article data-project-id="weather-balloon" data-status="completed" class="project-card flex flex-col rounded-2xl glassmorphism glow-border-amber overflow-hidden cursor-pointer group">
+        <article data-project-id="weather-balloon" data-category="hardware" class="project-card flex flex-col rounded-2xl glassmorphism glow-border-amber overflow-hidden cursor-pointer group">
           <div class="h-48 md:h-52 w-full overflow-hidden relative border-b border-white/5 bg-slate-950">
             <img src="./assets/images/weather_balloon.png" alt="High-Altitude Weather Balloon" class="w-full h-full object-cover card-image-zoom">
             <span class="absolute top-4 right-4 px-2.5 py-1 text-[11px] font-bold rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-widest badge-completed">
@@ -151,6 +155,7 @@
           </div>
           <div class="p-6 md:p-8 flex-1 flex flex-col justify-between">
             <div>
+              <span class="text-[10px] text-amber-500/80 font-extrabold uppercase tracking-widest block mb-1">Hardware &amp; Engineering</span>
               <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors duration-300 mb-2">Weather Balloon (IB PP)</h3>
               <p class="text-sm text-gray-400 line-clamp-3 leading-relaxed">I independently assembled a weather balloon payload and successfully launched and predicted the trajectory.</p>
             </div>
@@ -161,7 +166,7 @@
         </article>
 
         <!-- 3. Axiom Chess Engine -->
-        <article data-project-id="axiom-chess" data-status="wip" class="project-card flex flex-col rounded-2xl glassmorphism glow-border-gold overflow-hidden cursor-pointer group">
+        <article data-project-id="axiom-chess" data-category="software" class="project-card flex flex-col rounded-2xl glassmorphism glow-border-gold overflow-hidden cursor-pointer group">
           <div class="h-48 md:h-52 w-full overflow-hidden relative border-b border-white/5 bg-slate-950">
             <img src="./assets/images/axiom_chess.png" alt="Axiom Chess Engine" class="w-full h-full object-cover card-image-zoom">
             <span class="absolute top-4 right-4 px-2.5 py-1 text-[11px] font-bold rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/20 uppercase tracking-widest badge-wip">
@@ -170,6 +175,7 @@
           </div>
           <div class="p-6 md:p-8 flex-1 flex flex-col justify-between">
             <div>
+              <span class="text-[10px] text-amber-500/80 font-extrabold uppercase tracking-widest block mb-1">Software &amp; Systems</span>
               <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors duration-300 mb-2">Axiom Chess Engine</h3>
               <p class="text-sm text-gray-400 line-clamp-3 leading-relaxed">Developed a Python-based chess engine capable of defeating friends and family, integrated with the Lichess API.</p>
             </div>
@@ -180,7 +186,7 @@
         </article>
 
         <!-- 4. Openclaw AI assistant -->
-        <article data-project-id="openclaw-ai" data-status="wip" class="project-card flex flex-col rounded-2xl glassmorphism glow-border-amber overflow-hidden cursor-pointer group">
+        <article data-project-id="openclaw-ai" data-category="software" class="project-card flex flex-col rounded-2xl glassmorphism glow-border-amber overflow-hidden cursor-pointer group">
           <div class="h-48 md:h-52 w-full overflow-hidden relative border-b border-white/5 bg-slate-950">
             <img src="./assets/images/openclaw_ai.png" alt="Openclaw AI assistant" class="w-full h-full object-cover card-image-zoom">
             <span class="absolute top-4 right-4 px-2.5 py-1 text-[11px] font-bold rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/20 uppercase tracking-widest badge-wip">
@@ -189,6 +195,7 @@
           </div>
           <div class="p-6 md:p-8 flex-1 flex flex-col justify-between">
             <div>
+              <span class="text-[10px] text-amber-500/80 font-extrabold uppercase tracking-widest block mb-1">Software &amp; Systems</span>
               <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors duration-300 mb-2">Openclaw AI Assistant</h3>
               <p class="text-sm text-gray-400 line-clamp-3 leading-relaxed">A fully functional, free and power-efficient personal AI assistant running on SBC hardware.</p>
             </div>
@@ -199,7 +206,7 @@
         </article>
 
         <!-- 5. Custom NAS -->
-        <article data-project-id="custom-nas" data-status="completed" class="project-card flex flex-col rounded-2xl glassmorphism glow-border-gold overflow-hidden cursor-pointer group">
+        <article data-project-id="custom-nas" data-category="software" class="project-card flex flex-col rounded-2xl glassmorphism glow-border-gold overflow-hidden cursor-pointer group">
           <div class="h-48 md:h-52 w-full overflow-hidden relative border-b border-white/5 bg-slate-950">
             <img src="./assets/images/custom_nas.png" alt="Custom NAS Server" class="w-full h-full object-cover card-image-zoom">
             <span class="absolute top-4 right-4 px-2.5 py-1 text-[11px] font-bold rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-widest badge-completed">
@@ -208,6 +215,7 @@
           </div>
           <div class="p-6 md:p-8 flex-1 flex flex-col justify-between">
             <div>
+              <span class="text-[10px] text-amber-500/80 font-extrabold uppercase tracking-widest block mb-1">Software &amp; Networking</span>
               <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors duration-300 mb-2">Custom NAS Server</h3>
               <p class="text-sm text-gray-400 line-clamp-3 leading-relaxed">Fully functional local storage server running Immich server software to safely host and organize photos.</p>
             </div>
@@ -218,7 +226,7 @@
         </article>
 
         <!-- 6. Automated Sun-Tracking Solar Panel -->
-        <article data-project-id="solar-tracker" data-status="completed" class="project-card flex flex-col rounded-2xl glassmorphism glow-border-amber overflow-hidden cursor-pointer group">
+        <article data-project-id="solar-tracker" data-category="hardware" class="project-card flex flex-col rounded-2xl glassmorphism glow-border-amber overflow-hidden cursor-pointer group">
           <div class="h-48 md:h-52 w-full overflow-hidden relative border-b border-white/5 bg-slate-950">
             <img src="./assets/images/solar_tracker.png" alt="Automated Sun-Tracking Solar Panel" class="w-full h-full object-cover card-image-zoom">
             <span class="absolute top-4 right-4 px-2.5 py-1 text-[11px] font-bold rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-widest badge-completed">
@@ -227,6 +235,7 @@
           </div>
           <div class="p-6 md:p-8 flex-1 flex flex-col justify-between">
             <div>
+              <span class="text-[10px] text-amber-500/80 font-extrabold uppercase tracking-widest block mb-1">Hardware &amp; Robotics</span>
               <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors duration-300 mb-2">Sun-Tracking Solar Panel</h3>
               <p class="text-sm text-gray-400 line-clamp-3 leading-relaxed">Arduino-controlled solar panel setup driving servo motors to track ambient sunlight, charging a self-sustaining system.</p>
             </div>
@@ -237,20 +246,21 @@
         </article>
 
         <!-- 7. Credit Card Fraud Detector -->
-        <article data-project-id="fraud-detector" data-status="completed" class="project-card flex flex-col rounded-2xl glassmorphism glow-border-gold overflow-hidden cursor-pointer group">
+        <article data-project-id="fraud-detector" data-category="data-science" class="project-card flex flex-col rounded-2xl glassmorphism glow-border-gold overflow-hidden cursor-pointer group">
           <div class="h-48 md:h-52 w-full overflow-hidden relative border-b border-white/5 bg-gradient-to-br from-stone-900 to-stone-950 flex flex-col items-center justify-center p-6 text-center">
             <!-- Fallback Abstract gold/amber visual overlay -->
             <div class="p-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-2">
               <svg class="w-8 h-8 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
             </div>
             <span class="text-sm font-bold text-white">Credit Card Fraud Detector</span>
-            <span class="text-[10px] text-amber-400 tracking-wider font-semibold uppercase mt-1">Machine Learning</span>
+            <span class="text-[10px] text-amber-400 tracking-wider font-semibold uppercase mt-1">Data Science &amp; ML</span>
             <span class="absolute top-4 right-4 px-2.5 py-1 text-[11px] font-bold rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-widest badge-completed">
               Completed
             </span>
           </div>
           <div class="p-6 md:p-8 flex-1 flex flex-col justify-between">
             <div>
+              <span class="text-[10px] text-amber-500/80 font-extrabold uppercase tracking-widest block mb-1">Data Science &amp; ML</span>
               <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors duration-300 mb-2">Credit Card Fraud Detector</h3>
               <p class="text-sm text-gray-400 line-clamp-3 leading-relaxed">Successfully built a credit card fraud detector ML algorithm based off the Kaggle dataset, meeting all set targets.</p>
             </div>
@@ -261,20 +271,21 @@
         </article>
 
         <!-- 8. World Cup Predictor -->
-        <article data-project-id="world-cup" data-status="completed" class="project-card flex flex-col rounded-2xl glassmorphism glow-border-amber overflow-hidden cursor-pointer group">
+        <article data-project-id="world-cup" data-category="data-science" class="project-card flex flex-col rounded-2xl glassmorphism glow-border-amber overflow-hidden cursor-pointer group">
           <div class="h-48 md:h-52 w-full overflow-hidden relative border-b border-white/5 bg-gradient-to-br from-[#1C1917] to-[#0C0A09] flex flex-col items-center justify-center p-6 text-center">
             <!-- Fallback Abstract gold/amber visual overlay -->
             <div class="p-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-2">
               <svg class="w-8 h-8 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
             </div>
             <span class="text-sm font-bold text-white">World Cup Predictor</span>
-            <span class="text-[10px] text-amber-400 tracking-wider font-semibold uppercase mt-1">Data Engine</span>
+            <span class="text-[10px] text-amber-400 tracking-wider font-semibold uppercase mt-1">Data Science &amp; ML</span>
             <span class="absolute top-4 right-4 px-2.5 py-1 text-[11px] font-bold rounded-md bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-widest badge-completed">
               Completed
             </span>
           </div>
           <div class="p-6 md:p-8 flex-1 flex flex-col justify-between">
             <div>
+              <span class="text-[10px] text-amber-500/80 font-extrabold uppercase tracking-widest block mb-1">Data Science &amp; ML</span>
               <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors duration-300 mb-2">World Cup Predictor</h3>
               <p class="text-sm text-gray-400 line-clamp-3 leading-relaxed">I made a successful Python-based prediction engine to predict the World Cup tournament outcomes.</p>
             </div>
@@ -283,180 +294,3 @@
             </div>
           </div>
         </article>
-
-      </div>
-    </section>
-
-    <!-- About Me Section -->
-    <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-t border-white/5 scroll-mt-24">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <!-- Stats Blocks -->
-        <div class="lg:col-span-5 grid grid-cols-2 gap-4">
-          <div class="p-6 rounded-2xl glassmorphism border border-white/5 relative group hover:border-amber-500/30 transition-all duration-300">
-            <span class="block text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-500 mb-1">8</span>
-            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Builds & Projects</span>
-          </div>
-          <div class="p-6 rounded-2xl glassmorphism border border-white/5 relative group hover:border-amber-500/30 transition-all duration-300">
-            <span class="block text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-500 mb-1">6/6/6</span>
-            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">IB MYP Grade PP</span>
-          </div>
-          <div class="p-6 rounded-2xl glassmorphism border border-white/5 relative group hover:border-amber-500/30 transition-all duration-300">
-            <span class="block text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-500 mb-1">2+</span>
-            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Platforms Integrated</span>
-          </div>
-          <div class="p-6 rounded-2xl glassmorphism border border-white/5 relative group hover:border-amber-500/30 transition-all duration-300">
-            <span class="block text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-500 mb-1">SBC</span>
-            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">Hardware Expertise</span>
-          </div>
-        </div>
-
-        <!-- Philosophical Narrative -->
-        <div class="lg:col-span-7">
-          <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-6">Engineering & Academic Philosophy</h2>
-          <div class="space-y-4 text-gray-400 leading-relaxed font-medium">
-            <p>
-              I approach technology with a dual curiosity: building software systems that automate and predict, and assembling hardware components that physically interact with the environment. My academic journey through the International Baccalaureate (IB) program has instilled a rigorous, research-based framework into everything I develop.
-            </p>
-            <p>
-              Whether deploying high-altitude logistics payloads for weather balloons, building self-optimizing chess engines via python and API hooks, or structuring redundant server farms inside local network grids, I strive to overcome constraints using clean code, hardware optimization, and structured debugging.
-            </p>
-            <p>
-              My focus is on data integrity, embedded computing efficiency (Raspberry Pi/Arduino), and building real solutions that solve everyday challenges.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact & Connect Section -->
-    <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 border-t border-white/5 scroll-mt-24">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4">Start a Conversation</h2>
-        <p class="text-gray-400 max-w-xl mx-auto">
-          Whether you want to talk about system architecture, hardware deployment, or academic collaboration.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <!-- 1. LinkedIn Card -->
-        <a id="linkedin-contact" href="https://www.linkedin.com/in/matias-di-domenico-548551387/" target="_blank" class="flex items-center gap-6 p-8 rounded-2xl glassmorphism glow-border-gold group hover:-translate-y-1 transition-all duration-300">
-          <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-500 border border-amber-500/20 flex items-center justify-center shadow-md shadow-amber-500/5 group-hover:bg-amber-600 group-hover:text-black transition-all duration-300">
-            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-white mb-1">LinkedIn Profile</h3>
-            <p class="text-sm text-gray-400">Connect with me professionally.</p>
-          </div>
-        </a>
-
-        <!-- 2. GitHub Card -->
-        <a id="github-contact" href="https://github.com/matiasd2028-boop" target="_blank" class="flex items-center gap-6 p-8 rounded-2xl glassmorphism glow-border-gold group hover:-translate-y-1 transition-all duration-300">
-          <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-500 border border-amber-500/20 flex items-center justify-center shadow-md shadow-amber-500/5 group-hover:bg-amber-600 group-hover:text-black transition-all duration-300">
-            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.479C19.137 20.164 22 16.418 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/></svg>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-white mb-1">GitHub Profile</h3>
-            <p class="text-sm text-gray-400">Explore my open-source code.</p>
-          </div>
-        </a>
-
-        <!-- 3. Email Card -->
-        <a id="email-contact" href="mailto:matdido9@gmail.com" class="flex items-center gap-6 p-8 rounded-2xl glassmorphism glow-border-amber group hover:-translate-y-1 transition-all duration-300">
-          <div class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-500 border border-amber-500/20 flex items-center justify-center shadow-md shadow-amber-500/5 group-hover:bg-amber-600 group-hover:text-black transition-all duration-300">
-            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-white mb-1">Email Address</h3>
-            <p class="text-sm text-gray-400 font-semibold text-amber-400">matdido9@gmail.com</p>
-          </div>
-        </a>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="relative z-10 border-t border-white/5 py-12 text-center text-sm text-gray-500 bg-[#07080a]">
-    <div class="max-w-7xl mx-auto px-4">
-      <p class="mb-2">&copy; 2026 Matias Di Domenico. All rights reserved.</p>
-      <p class="text-xs text-gray-600">Built using Tailwind CSS &amp; Vanilla JavaScript. Optimized for GitHub Pages.</p>
-    </div>
-  </footer>
-
-  <!-- Project Detail Modal Overlay -->
-  <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 overflow-y-auto" role="dialog" aria-modal="true">
-    
-    <!-- Modal Dark Overlay Background -->
-    <div id="modal-overlay" class="fixed inset-0 bg-stone-950/80 backdrop-blur-md opacity-0 transition-opacity duration-300"></div>
-    
-    <!-- Modal Window Container -->
-    <div id="modal-content-box" class="w-full max-w-4xl rounded-3xl glassmorphism-modal shadow-2xl relative overflow-hidden z-10 opacity-0 scale-95 transition-all duration-300 max-h-[90vh] flex flex-col">
-      
-      <!-- Close Button -->
-      <button id="modal-close-btn" class="absolute top-6 right-6 p-2 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 hover:border-white/20 transition-all duration-300 z-20" aria-label="Close modal">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
-
-      <!-- Scrollable Modal Content -->
-      <div class="overflow-y-auto flex-1 p-6 md:p-10">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          
-          <!-- Column 1: Image / Graphics Container -->
-          <div class="w-full rounded-2xl overflow-hidden bg-slate-950 border border-white/5 relative h-64 md:h-80 shadow-inner flex items-center justify-center">
-            <img id="modal-img" src="" alt="" class="w-full h-full object-cover" style="display: none;">
-          </div>
-          
-          <!-- Column 2: Information Breakdown -->
-          <div class="flex flex-col justify-between">
-            <div>
-              <div class="flex items-center gap-3 mb-4">
-                <span id="modal-status" class="px-2.5 py-0.5 text-xs font-semibold rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 badge-completed">
-                  Completed
-                </span>
-              </div>
-              
-              <h2 id="modal-title" class="text-2xl md:text-3xl font-extrabold text-white tracking-tight mb-4">
-                Project Title
-              </h2>
-              
-              <!-- Result Summary -->
-              <div class="mb-6">
-                <h4 class="text-xs font-extrabold text-amber-500 uppercase tracking-widest mb-1.5">Overview / Outcome</h4>
-                <p id="modal-result" class="text-gray-300 text-sm leading-relaxed font-medium">
-                  Project result summary description goes here.
-                </p>
-              </div>
-
-              <!-- Skills used -->
-              <div class="mb-6">
-                <h4 class="text-xs font-extrabold text-amber-500 uppercase tracking-widest mb-2.5">Skills Used</h4>
-                <div id="modal-skills" class="flex flex-wrap gap-2">
-                  <!-- Skill chips dynamically rendered -->
-                </div>
-              </div>
-
-              <!-- Major Challenges -->
-              <div class="mb-8">
-                <h4 class="text-xs font-extrabold text-amber-500 uppercase tracking-widest mb-1.5">Major Challenges</h4>
-                <p id="modal-challenges" class="text-gray-300 text-sm leading-relaxed font-medium">
-                  Challenge details go here.
-                </p>
-              </div>
-            </div>
-
-            <!-- External Action Links Buttons Container -->
-            <div id="modal-links" class="flex flex-wrap gap-3 pt-4 border-t border-white/5">
-              <!-- Dynamically mapped action links -->
-            </div>
-          </div>
-          
-        </div>
-      </div>
-      
-    </div>
-  </div>
-
-  <!-- Vanilla Javascript Interface logic -->
-  <script src="./assets/js/main.js"></script>
-</body>
-</html>
